@@ -1,10 +1,20 @@
 import React from 'react';
+import { BrowserRouter as Router,Route,Switch,Redirect } from 'react-router-dom';
+import Login from './modules/auth/components/login.component';
+import NewUser from './modules/auth/components/newuser.component';
+import Projects from './modules/projects/components/projects.compoent';
 
-
-
-function App() {
+const App = () => {
   return (
-    <h1>MERM APP</h1>
+    <Router>
+    <div className="container">
+       <Switch>
+         <Route exact path="/" component={Login}></Route>
+         <Route exact path="/newuser" component={NewUser}></Route>
+         <Route exact path="/projects" component={Projects}></Route>
+       </Switch>
+   </div>
+ </Router>
   );
 }
 
