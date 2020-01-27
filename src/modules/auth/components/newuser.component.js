@@ -81,6 +81,7 @@ const NewUser = () => {
             reverseButtons: true
           }).then((result) => {
             if (result.value) {
+               //action(user) 
               swalWithBootstrapButtons.fire(
                 'Guardado!',
                 'Your user has been inserted.',
@@ -130,9 +131,12 @@ const NewUser = () => {
                          </input>
                     </div>
                     <div className="campo-form">
-                        <input type="submit" className="btn btn-primario btn-block" value="Iniciar Sessión"></input>
+                        <input type="submit" className="btn btn-primario btn-block" value="Crear usuario"></input>
                     </div>
                 </form>
+                <div>
+                    <Link to="/" className="account-link">Login</Link>
+                </div>
             </div>
         </div>
     );
