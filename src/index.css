@@ -284,7 +284,7 @@ aside  {
   transition: opacity 200ms;
 }
 
-.form-usuario {
+.form-user {
     background-color: var(--gris2);
     height: 100vh;
     min-height: 800px;
@@ -294,6 +294,9 @@ aside  {
 }
 
 .contenedor-form {
+    align-items: center;
+    margin-top: 10%;
+    margin-left: 35%;
     padding: 5rem 3rem;
     max-width: 500px;
     width: 95%;
@@ -326,3 +329,4 @@ aside  {
   display: block;
   opacity: .7;
 }
+
