@@ -324,9 +324,12 @@ aside  {
   flex: 1;
 }
 
-.enlace-cuenta {
-  margin-top: 2rem;
+.account-link {
+  margin: 1rem;
   display: block;
   opacity: .7;
 }
 
+button {
+ margin:1rem;
+}

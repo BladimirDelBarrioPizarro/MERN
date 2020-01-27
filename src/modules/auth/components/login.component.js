@@ -1,5 +1,6 @@
 import React,{ useState } from 'react';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     
@@ -50,6 +51,9 @@ const Login = () => {
                         <input type="submit" className="btn btn-primario btn-block" value="Iniciar Sessión"></input>
                     </div>
                 </form>
+                <div>
+                    <Link to="/newuser" className="account-link">New User</Link>
+                </div>
             </div>
         </div>
     );
