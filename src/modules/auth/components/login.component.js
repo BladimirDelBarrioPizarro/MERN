@@ -1,9 +1,33 @@
-import React from 'react';
+import React,{ useState } from 'react';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     
-   const handleOnchange = () => {
+   const [email,setEmail] = useState('');
+   const [password,setPassword] = useState('');
+   let validator = require("email-validator");   
+   
 
+   const handleOnchangeEmail = (e) => {
+        setEmail(e.target.value)
+   }
+
+   const handleOnchangePassword = (e) => {
+        setPassword(e.target.value)
+   }
+
+   const handleOnSubmit = (e) => {
+    e.preventDefault();
+       const user = {
+        email,
+        password
+       }
+       console.log(validator.validate(email));
+       if(!validator.validate(email)){
+        Swal.fire('Email not valid')
+        setEmail('')
+       }
+       console.log(user)
    }
 
     return(
@@ -11,15 +35,15 @@ const Login = () => {
             <div className="contenedor-form sombra-dark">
                 <h1>Iniciar Sessión</h1>
 
-                <form>
+                <form onSubmit={handleOnSubmit}>
                     <div className="campo-form">
                         <label htmlFor="email">Email</label>
-                         <input type="email" id="email" placeholder="Your email" onChange={handleOnchange}>
+                         <input type="email" id="email" placeholder="Your email" onChange={e => handleOnchangeEmail(e)} value={email}>
                          </input>
                     </div>
                     <div className="campo-form">
                          <label htmlFor="password">Password</label>
-                         <input type="password" id="password" placeholder="password" onChange={handleOnchange}>
+                         <input type="password" id="password" placeholder="password" onChange={e => handleOnchangePassword(e)} value={password}>
                          </input>
                     </div>
                     <div className="campo-form">
