@@ -137,14 +137,14 @@ aside  {
   display: flex;
   justify-content: space-between;
   background-color: var(--gris2);
-  padding: 4rem;
+  padding: 3rem;
 }
-.nombre-usuario {
+.user-name {
   color: var(--blanco);
   font-size: 2.2rem;
   margin: 0;
 }
-.nombre-usuario span {
+.user-name span {
   font-weight: 900;
 }
 .nav-principal a {
@@ -158,7 +158,7 @@ aside  {
 /** Formulario crear y editar tareas **/
 .formulario {
   background-color: var(--gris3);
-  padding: 4rem;
+  padding: 2rem;
 }
 .formulario form {
   max-width: 600px;
