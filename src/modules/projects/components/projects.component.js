@@ -2,7 +2,7 @@ import React from 'react';
 import Sidebar from './sidebar.component';
 import Header from '../../header/components/header.component';
 import FormTasks from '../../tasks/components/formtasks.component';
-import ListsTasks from '../../tasks/components/listtasks.component';
+import ListsTasks from '../../tasks/components/listtaks.component';
 
 const Projects = () => {
     return(

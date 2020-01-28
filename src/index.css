@@ -222,7 +222,7 @@ aside  {
   padding: .8rem;
   font-size:1.4rem;
   border-radius: 0;
-  margin: 0;
+  margin-right: 0.1rem;
 }
 
 .estado {
@@ -332,6 +332,8 @@ aside  {
 button {
  margin:1rem;
 }
+
+
 
 .noEdge{
   border:0

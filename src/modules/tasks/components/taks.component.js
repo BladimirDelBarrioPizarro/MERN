@@ -6,9 +6,9 @@ const Taks = (task) => {
                 <p>{task.task.name}</p>
             <div>
                 {task.task.state?
-                    <button type="button" className="completo">Completo</button>
+                    <button type="button" className="btn btn-success">Completo</button>
                 :
-                    <button type="button" className="incompleto">Incompleto</button>
+                    <button type="button" className="btn btn-warning">Incompleto</button>
                 }
             </div>
             <div className="acciones">
