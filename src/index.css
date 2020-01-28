@@ -186,17 +186,16 @@ aside  {
 
 
 
-.listado-tareas {
+.list-taks {
   max-width: 600px;
   margin: 0 auto;
 }
 
 .tarea {
   display: flex;
-  justify-content: space-between;
-  background-color: var(--blanco);
+  justify-content: space-around;
   padding: .5rem 2rem;
-  align-items: center;
+  align-items: stretch;
   margin-bottom: 1rem;
   border-radius: .5rem;
 
