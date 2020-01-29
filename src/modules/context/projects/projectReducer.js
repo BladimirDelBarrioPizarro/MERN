@@ -13,20 +13,10 @@ export default (state,action) => {
                projects:action.payload 
             }
         case SET_PROJECT:
-            console.log(state.projects)
-            console.log(action.payload)
-            /* return{
-                ...state,
-                //projects:Object.assign(state.projects,state.projects.push(action.payload))
-               // projects:[...state.projects,action.payload]
-            } */
-           /*  return Object.assign({}, state, {
-                projects: [...state.projects,action.payload]
-              }) */
               return {
-                      ...state,
-                      projects:[...state.projects,action.payload],
-                      newProject:false
+                 ...state,
+                 projects:[...state.projects,action.payload],
+                 newProject:false
             }
         default:
             return state;

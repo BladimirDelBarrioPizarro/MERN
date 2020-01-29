@@ -18,12 +18,14 @@ const NewProject = () => {
 
  const handleSubmit = (e) => {
     e.preventDefault(); 
-    if(project === ''){
+    if(project.name === ''){
         Swal.fire('The project name cannot be empty!')
     }
-    console.log(project)
-    setProject(project)
-    saveProject({})
+    else{
+      console.log(project)
+      setProject(project)
+      saveProject({})
+    } 
  }
 
   return (   
