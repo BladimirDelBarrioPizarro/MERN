@@ -20,7 +20,7 @@ const ListsTasks = () => {
     ]
 
     const {name} = currentProject[0];
-    console.log(currentProject[0].id)
+    
     return(
        
        <Fragment> 
@@ -30,7 +30,7 @@ const ListsTasks = () => {
                 {taks.map(item =>  <li className="tarea"><Taks task={item}></Taks></li>)} 
             </ul>
         
-        <button type="button" className="btn btn-danger" onClick={() => handleDeleteProject(currentProject)}>Eliminar Proyecto &times;</button>    
+        <button type="button" className="btn btn-danger" onClick={() => handleDeleteProject(currentProject[0].id)}>Eliminar Proyecto &times;</button>    
        </Fragment> 
     )
 }

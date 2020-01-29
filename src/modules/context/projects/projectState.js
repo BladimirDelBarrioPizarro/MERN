@@ -58,10 +58,10 @@ const ProjectState = props => {
         })
     }
 
-    const handleDeleteProject = project => {
+    const handleDeleteProject = projectId => {
         dispatch({
             type: DELETE_PROJECT,
-            payload:project
+            payload:projectId
         })
     }
 

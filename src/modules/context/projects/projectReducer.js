@@ -28,11 +28,10 @@ export default (state,action) => {
                  currentProject: state.projects.filter(item => item.id === action.payload.id)
              }
         case DELETE_PROJECT:
-            console.log(action.payload)
-            state.projects.map(item => console.log(item.id))
             return {
                 ...state,
-                projects: state.projects.filter(item => item.id !== action.payload[0].id)    
+                projects: state.projects.filter(item => item.id !== action.payload),
+                currentProject:null
             }         
         default:
             return state;
