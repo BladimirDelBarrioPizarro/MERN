@@ -5,7 +5,7 @@ import ProjectContext from '../../context/projects/projectContext';
 const ListsTasks = () => {
 
     const projectContext = useContext(ProjectContext);  
-    const {currentProject} =  projectContext;
+    const {currentProject,handleDeleteProject} =  projectContext;
     
     if(!currentProject){
         return <h2>Selecciona un proyecto</h2>
@@ -20,7 +20,7 @@ const ListsTasks = () => {
     ]
 
     const {name} = currentProject[0];
-    
+    console.log(currentProject[0].id)
     return(
        
        <Fragment> 
@@ -30,7 +30,7 @@ const ListsTasks = () => {
                 {taks.map(item =>  <li className="tarea"><Taks task={item}></Taks></li>)} 
             </ul>
         
-        <button type="button" className="btn btn-danger">Eliminar Proyecto &times;</button>    
+        <button type="button" className="btn btn-danger" onClick={() => handleDeleteProject(currentProject)}>Eliminar Proyecto &times;</button>    
        </Fragment> 
     )
 }

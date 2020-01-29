@@ -17,9 +17,7 @@ const Projects = () => {
                 <Header></Header>
                 <main>
                     {currentProject ? <FormTasks></FormTasks> : null }
-                    
                     <div className="container-tasks" >
-                    Tus Proyectos
                        <ListsTasks></ListsTasks>
                     </div>
                 </main>
