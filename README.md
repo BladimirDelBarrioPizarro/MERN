@@ -10,3 +10,6 @@ npm i email-validator
 
 ## sweeralert2
 npm install sweetalert2
+
+## UUID
+npm install uuid
