@@ -13,9 +13,6 @@ const ListProjects = () => {
 
     if(projects.length === 0){return null;}
 
-  
-   console.log(projects) 
-
     return(
             <ul className="list-projects">
                {projects.map(item => (<Project key={item.id} project={item}></Project>))}

@@ -1,4 +1,7 @@
-import { SHOW_FORM_PROJECT,GET_PROJECTS,SET_PROJECT } from '../../types/types';
+import { SHOW_FORM_PROJECT,
+        GET_PROJECTS,
+        SET_PROJECT,
+        GET_CURRENT_PROJECT } from '../../types/types';
 
 export default (state,action) => {
     switch(action.type){
@@ -18,6 +21,11 @@ export default (state,action) => {
                  projects:[...state.projects,action.payload],
                  newProject:false
             }
+        case GET_CURRENT_PROJECT:
+             return {
+                 ...state,
+                 currentProject: state.projects.filter(item => item.id === action.payload.id)
+             }    
         default:
             return state;
     }

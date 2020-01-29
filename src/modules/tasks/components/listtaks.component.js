@@ -1,7 +1,16 @@
-import React,{ Fragment } from 'react';
+import React,{ Fragment,useContext,useState } from 'react';
 import Taks from './taks.component';
+import ProjectContext from '../../context/projects/projectContext';
 
 const ListsTasks = () => {
+
+    const projectContext = useContext(ProjectContext);  
+    const {currentProject} =  projectContext;
+    
+    if(!currentProject){
+        return <h2>Selecciona un proyecto</h2>
+    }
+   
 
     const taks = [
         {name:'Elegir plataforma',state:true},
@@ -9,13 +18,13 @@ const ListsTasks = () => {
         {name:'Elegir placa base',state:false},
         {name:'Elegir mouse',state:true},
     ]
-    
-  
 
+    const {name} = currentProject[0];
+    
     return(
-        
+       
        <Fragment> 
-        <h2>Proyecto: Test1</h2>
+            <h2>Proyecto: {name} </h2>
             <ul>
                 {taks.length === 0?<li className="tarea"><p>No hay tareas</p></li>:''}
                 {taks.map(item =>  <li className="tarea"><Taks task={item}></Taks></li>)} 

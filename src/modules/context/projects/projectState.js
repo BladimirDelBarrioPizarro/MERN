@@ -3,7 +3,8 @@ import ProjectContext from './projectContext';
 import ProjectReducer from './projectReducer';
 import { SHOW_FORM_PROJECT,
          GET_PROJECTS,
-         SET_PROJECT } from '../../types/types';
+         SET_PROJECT,
+         GET_CURRENT_PROJECT } from '../../types/types';
 import uuid from 'uuid';
 
 
@@ -15,12 +16,13 @@ const ProjectState = props => {
         {id:uuid.v4(),name:'Test 2'},
         {id:uuid.v4(),name:'Test 3'},
         {id:uuid.v4(),name:'Test 4'},
-        {id:uuid.v4(),name:'MERN'}
+        {id:uuid.v4(),name:'Test 5'}
     ] 
 
     const initialState = {
         newProject:false,
-        projects : []
+        projects : [],
+        currentProject:null
     }
 
     //Dispath para ejecutar acciones
@@ -48,16 +50,23 @@ const ProjectState = props => {
         })
     }
 
-    
+    const handleCurrentProject = project => {
+        dispatch({
+            type: GET_CURRENT_PROJECT,
+            payload: project
+        })
+    }
 
 
     return (
         <ProjectContext.Provider value={{
             newProject:state.newProject,
             projects:state.projects,
+            currentProject:state.currentProject,
             handleShowFormNewProject,
             getProjects,
-            setProject
+            setProject,
+            handleCurrentProject
         }}>
             {props.children}
         </ProjectContext.Provider>
