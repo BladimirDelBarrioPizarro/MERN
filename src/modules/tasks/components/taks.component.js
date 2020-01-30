@@ -1,6 +1,8 @@
 import React from 'react';
 
+
 const Taks = (task) => {
+
     return (
         <li className="tarea sombra">
                 <p>{task.task.name}</p>
