@@ -4,7 +4,7 @@ import TasksReducer from './tasksReducer';
 import uuid from 'uuid';
 import { 
          GET_TASKS_BY_PROJECTID,
-         GET_TASKS } from '../../types/types';
+         SET_TASK_BY_PROJECT } from '../../types/types';
 
 const TasksState = props => {
 
@@ -41,7 +41,6 @@ const TasksState = props => {
    const[state,dispatch] = useReducer(TasksReducer,initialState)
 
    //Funciones CRUD
-
    const handleGetTasksByProjectId = proyectId => {
     dispatch({
         type:GET_TASKS_BY_PROJECTID,
@@ -49,12 +48,21 @@ const TasksState = props => {
     })
    }
 
+   const handleSetTaskByProject = task => {
+    dispatch({
+        type:SET_TASK_BY_PROJECT,
+        payload:task
+    }) 
+   }
+
+
    
    return (
        <TasksContext.Provider value={{
            tasks:state.tasks,
            tasksProject:state.tasksProject,
-           handleGetTasksByProjectId
+           handleGetTasksByProjectId,
+           handleSetTaskByProject
        }}>
            {props.children}
        </TasksContext.Provider>

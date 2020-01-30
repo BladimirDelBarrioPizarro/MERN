@@ -9,7 +9,7 @@ const ListsTasks = () => {
     const {currentProject,handleDeleteProject} =  projectContext;
 
     const tasksContext = useContext(TasksContext);
-    const { tasks } = tasksContext;
+    const { tasks,tasksProject } = tasksContext;
 
    
     
@@ -25,7 +25,7 @@ const ListsTasks = () => {
             <h2>Proyecto: {name} </h2>
             <ul>
                 {tasks.length === 0?<li className="tarea"><p>No hay tareas</p></li>:''}
-                {tasks.filter(item => item.projectId === id).map(item =>  <li className="tarea"><Taks task={item}></Taks></li>)} 
+                {tasksProject.map(item =>  <li className="tarea"><Taks task={item}></Taks></li>)} 
             </ul>
         
         <button type="button" className="btn btn-danger" onClick={() => handleDeleteProject(id)}>Eliminar Proyecto &times;</button>    
@@ -34,3 +34,5 @@ const ListsTasks = () => {
 }
 
 export default ListsTasks;
+
+// {tasks.filter(item => item.projectId === id).map(item =>  <li className="tarea"><Taks task={item}></Taks></li>)} 
